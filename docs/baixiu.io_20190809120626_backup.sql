@@ -163,7 +163,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','513256514@qq.com','e10adc3949ba59abbe56e057f20f883e','管理员','/static/uploads/avatar.jpg',NULL,'activated'),(2,'zce','w@zce.me','e10adc3949ba59abbe56e057f20f883e','汪磊','/static/uploads/avatar.jpg',NULL,'activated'),(3,'ice','ice@wedn.net','e10adc3949ba59abbe56e057f20f883e','汪磊','/static/uploads/avatar.jpg',NULL,'activated');
+INSERT INTO `users` VALUES (1,'admin','123456@qq.com','e10adc3949ba59abbe56e057f20f883e','管理员','/static/uploads/avatar.jpg',NULL,'activated'),(2,'zce','w@zce.me','e10adc3949ba59abbe56e057f20f883e','汪磊','/static/uploads/avatar.jpg',NULL,'activated'),(3,'ice','ice@wedn.net','e10adc3949ba59abbe56e057f20f883e','汪磊','/static/uploads/avatar.jpg',NULL,'activated');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

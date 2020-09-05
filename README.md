@@ -783,7 +783,7 @@ echo json_encode($affected_rows >= 0);
 
 ```js
 // 将数据渲染到页面上
-var html = $("#comment_tmpl").render({ comments: data.comments });
+var html = $('#comment_tmpl').render({ comments: data.comments });
 $tbody.html(html).fadeIn();
 ```
 
@@ -798,7 +798,7 @@ $tbody.html(html).fadeIn();
  */
 function loadPage(page) {
   $tbody.fadeOut();
-  $.getJSON("/admin/api/comments.php", { page: page }, function(data) {
+  $.getJSON('/admin/api/comments.php', { page: page }, function (data) {
     console.log(data);
     if (page > data.total_pages) {
       // 删除完最后一页数据时跳转面到临界页面，即新的最后一页
@@ -806,26 +806,26 @@ function loadPage(page) {
       return;
     }
     // 动态总页数 调用destroy方法，然后使用新选项初始化它
-    $(".pagination").twbsPagination("destroy");
+    $('.pagination').twbsPagination('destroy');
     // 分页组件
-    $(".pagination").twbsPagination({
+    $('.pagination').twbsPagination({
       // 渲染分页页面组件
       initiateStartPageClick: false, // 否则 onPageClick 第一次就会触发
-      first: "首页",
-      last: "未页",
-      prev: "上一页",
-      next: "下一页",
+      first: '首页',
+      last: '未页',
+      prev: '上一页',
+      next: '下一页',
       startPage: page,
       totalPages: data.total_pages,
       visiblePages: 5,
-      onPageClick: function(e, page) {
+      onPageClick: function (e, page) {
         // 点击分页页码才会执行这里的代码
         loadPage(page);
         currentPage = page;
-      }
+      },
     });
     // 将数据渲染到页面上
-    var html = $("#comment_tmpl").render({ comments: data.comments });
+    var html = $('#comment_tmpl').render({ comments: data.comments });
     $tbody.html(html).fadeIn();
   });
 }
@@ -844,8 +844,8 @@ loadPage(currentPage);
    - 为所有 btn-delete 注册点击事件
 
    ```js
-   $(".btn‐delete").on("click", function() {
-     console.log("btn delete clicked");
+   $('.btn‐delete').on('click', function () {
+     console.log('btn delete clicked');
    });
    ```
 
@@ -862,8 +862,8 @@ loadPage(currentPage);
 
    ```js
    // 删除评论
-   $tbody.on("click", ".btn‐delete", function() {
-     console.log("btn delete clicked");
+   $tbody.on('click', '.btn‐delete', function () {
+     console.log('btn delete clicked');
    });
    ```
 
@@ -872,12 +872,10 @@ loadPage(currentPage);
 点击事件执行 -> 发送异步请求 -> 移除当前点击按钮所属行
 
 ```js
-$tbody.on("click", ".btn‐delete", function() {
-  var $tr = $(this)
-    .parent()
-    .parent();
-  var id = parseInt($tr.data("id"));
-  $.get("/admin/comment‐delete.php", { id: id }, function(res) {
+$tbody.on('click', '.btn‐delete', function () {
+  var $tr = $(this).parent().parent();
+  var id = parseInt($tr.data('id'));
+  $.get('/admin/comment‐delete.php', { id: id }, function (res) {
     res.success && $tr.remove();
   });
 });
@@ -1039,13 +1037,13 @@ $tbody.on("click", ".btn‐delete", function() {
   <script>
     // NProgress
     $(document)
-      .ajaxStart(function() {
+      .ajaxStart(function () {
         NProgress.start();
-        $("#loading").fadeIn();
+        $('#loading').fadeIn();
       })
-      .ajaxStop(function() {
+      .ajaxStop(function () {
         NProgress.done();
-        $("#loading").fadeOut();
+        $('#loading').fadeOut();
       });
   </script>
   <script>
@@ -1083,5 +1081,5 @@ define('XIU_DB_NAME', 'baixiu.io');
 ```
 
 3.index.php 页面 登录账号密码
-513256514@qq.com
+123456@qq.com
 123456
