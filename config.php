@@ -14,10 +14,10 @@ define('XIU_DB_USER', 'root');
 /*
 数据库密码
  */
-define('XIU_DB_PASS', 'root');
+define('XIU_DB_PASS', '');
 /*
 数据库名称
  */
-define('XIU_DB_NAME', 'baixiu.io');
+define('XIU_DB_NAME', 'baixiu');
 
 
